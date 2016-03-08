@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+<script>
+
+    function carregar(){
+
+        var xhttp = new XMLHttpRequest();
+
+        //callback
+        xhttp.onreadystatechange = function() {
+            if (xhttp.readyState == 4 && xhttp.status == 200) {
+                document.getElementById("conteudo").innerHTML = xhttp.responseText;
+            }
+        };
+
+
+        //Request
+        xhttp.open("GET", "cliente", true);
+        xhttp.send();
+
+
+    }
+
+</script>
+
+
+</head>
+<body>
+
+
+<div id="conteudo">
+
+</div>
+
+<button onclick="carregar()" value="ok" />
+</body>
+</html>
